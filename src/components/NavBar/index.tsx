@@ -1,13 +1,20 @@
-import { Header, SearchInput, Image, Favorites } from './styles';
+import { useHistory } from 'react-router-dom';
+import { Header, Nav, SearchInput, Image, Favorites } from './styles';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
+  const history = useHistory();
+
   return (
     <Header>
-      <Image src={logo} alt="Logo Baduk" />
-      <Favorites href="/">Favoritos</Favorites>
-      <SearchInput placeholder="Digite um filme" value="" />
+      <Nav>
+        <Image src={logo} alt="Logo Baduk" onClick={() => history.push('/')} />
+        <Favorites onClick={() => history.push('/favoritos')}>
+          Favoritos
+        </Favorites>
+      </Nav>
+      <SearchInput placeholder="Digite um filme" />
     </Header>
   );
 };
