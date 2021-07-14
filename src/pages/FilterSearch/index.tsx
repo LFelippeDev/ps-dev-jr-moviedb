@@ -9,7 +9,7 @@ const FilterSearch = () => {
       <Navbar />
       <Container>
         <Title>Drama</Title>
-        <Carousel favorite={false} />
+        <Carousel favorite={false} list={[]} />
       </Container>
     </Fragment>
   );

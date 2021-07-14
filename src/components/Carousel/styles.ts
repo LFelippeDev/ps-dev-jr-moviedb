@@ -26,8 +26,10 @@ export const ImageCard = styled.img`
 export const Info = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: end;
 
   margin-top: 10px;
+  max-width: 233px;
 
   button {
     font-size: 24px;

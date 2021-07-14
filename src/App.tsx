@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import Home from './pages/Home/index';
 import FilterSearch from './pages/FilterSearch/index';
 import Favorites from './pages/Favorites/index';
@@ -16,7 +16,7 @@ function App() {
           <Route path="/drama" component={FilterSearch} />
           <Route path="/favoritos" component={Favorites} />
           <Route path="*">
-            <Redirect to="/" />
+            <Link to="/" />
           </Route>
         </ThemeProvider>
       </Switch>

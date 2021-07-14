@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 export const Header = styled.header`
 background: ${(props) => props.theme.colors.black};
@@ -22,7 +23,7 @@ height: 60px;
 margin-right: 20px;
 cursor: pointer;
 `
-export const Favorites = styled.a`
+export const Favorites = styled(Link)`
 font-family: ${(props) => props.theme.fonts.regular};
 font-size: 20px;
 font-weight: bold;

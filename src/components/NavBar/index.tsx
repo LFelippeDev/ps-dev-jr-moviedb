@@ -10,9 +10,7 @@ const Navbar = () => {
     <Header>
       <Nav>
         <Image src={logo} alt="Logo Baduk" onClick={() => history.push('/')} />
-        <Favorites onClick={() => history.push('/favoritos')}>
-          Favoritos
-        </Favorites>
+        <Favorites to="/favoritos">Favoritos</Favorites>
       </Nav>
       <SearchInput placeholder="Digite um filme" />
     </Header>
