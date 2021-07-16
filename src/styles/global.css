@@ -5,6 +5,8 @@
   font-size: 100%;
   vertical-align: baseline;
   font-family: Roboto, sans-serif;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 #root {

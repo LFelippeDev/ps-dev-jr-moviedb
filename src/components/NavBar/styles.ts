@@ -22,15 +22,40 @@ margin-right: 20px;
 cursor: pointer;
 `
 export const Links= styled(Link)`
+display: inline;
+position: relative;
 font-size: 20px;
 margin-right: 10px;
 font-weight: bold;
 color: ${(props) => props.theme.colors.text};
 text-decoration: none;
+:hover{
+  color: ${(props) => props.theme.colors.primary};
+}
+:hover ul{
+  display:block;
+  position: absolute;
+}
 cursor: pointer;
 `
+export const Genres = styled.ul`
+display: none;
+font-size: 20px;
+margin-right: 10px;
+font-weight: bold;
+color: ${(props) => props.theme.colors.text};
+cursor: pointer;
+li{
+  background: black;
+  padding: 10px;
+  :hover{
+    color:${(props) => props.theme.colors.primary};
+  }
+}
+`
+
 export const SearchInput = styled.input`
-background:  ${(props) => props.theme.colors.gray};
+background: ${(props) => props.theme.colors.gray};
 border: none;
 border-radius: 10px;
 padding-left: 20px;

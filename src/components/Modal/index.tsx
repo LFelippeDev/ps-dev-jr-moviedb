@@ -1,5 +1,9 @@
+import { useState } from 'react';
 import { Item } from '../../types/types';
-import { Container, InfoMovie } from './styles';
+import { Container, InfoModal, InfoMovie, MovieContent } from './styles';
+import { IoCloseSharp } from 'react-icons/io5';
+import { imgUrl } from '../../services/api';
+import teste from '../../assets/teste.jpg';
 
 type ModalProps = {
   item: Item;
@@ -7,12 +11,26 @@ type ModalProps = {
 };
 
 const ModalComponent = (props: ModalProps) => {
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(props.openModal);
   return (
-    <Container isOpen={props.openModal}>
-      <InfoMovie>
-        <h2>{props.item.title}</h2>
-        <button>X</button>
-      </InfoMovie>
+    <Container isOpen={modalIsOpen}>
+      <InfoModal>
+        <button type="button" onClick={() => setModalIsOpen(false)}>
+          <IoCloseSharp />
+        </button>
+        <MovieContent>
+          <img
+            src={
+              props.item.poster_path ? imgUrl + props.item.poster_path : teste
+            }
+            alt={props.item.title}
+          />
+          <InfoMovie>
+            <h2>{props.item.vote_average}</h2>
+            <span>{props.item.title}</span>
+          </InfoMovie>
+        </MovieContent>
+      </InfoModal>
     </Container>
   );
 };

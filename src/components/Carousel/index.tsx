@@ -6,6 +6,7 @@ import { FavoritesList, Item } from '../../types/types';
 import { Fragment, useEffect, useState } from 'react';
 import ModalComponent from '../Modal';
 import { render } from '@testing-library/react';
+import teste from '../../assets/teste.jpg';
 
 type CarouselProps = {
   favorite: boolean;
@@ -63,16 +64,20 @@ const Carousel = (props: CarouselProps) => {
   function openModal(item: Item) {
     render(<ModalComponent item={item} openModal={true} />);
   }
-
   return (
     <Fragment>
       <Container>
         <Slider {...settings}>
           {list.map((item) => (
             <Card key={item.id}>
-              <ImageCard src={imgUrl + item.poster_path} alt={item.title} />
+              <ImageCard
+                src={item.poster_path ? imgUrl + item.poster_path : teste}
+                alt={item.title ? item.title : item.name}
+              />
               <Info>
-                <span onClick={() => openModal(item)}>{item.title}</span>
+                <span onClick={() => openModal(item)}>
+                  {item.title ? item.title : item.name}
+                </span>
                 <button
                   aria-label="Favoritar"
                   onClick={

@@ -1,9 +1,9 @@
 import { Fragment, useContext } from 'react';
 import Carousel from '../../components/Carousel/index';
-import { SearchContext } from '../../context/Search';
+import { ListContext } from '../../context/List';
 import { Title, Container } from './style';
 const FilterSearch = () => {
-  const { list } = useContext(SearchContext);
+  const { list } = useContext(ListContext);
   return (
     <Fragment>
       <Container>
