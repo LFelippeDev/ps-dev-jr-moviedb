@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: calc(100vw - 40px);
+  max-width: calc(100vw - 40px);
   margin-top: 20px;
 
   .slick-slide {
     margin-right: 36px;
+    padding: 20px;
   }
 `;
 
@@ -14,6 +15,7 @@ export const Card = styled.div`
 
   :hover {
     cursor: pointer;
+    transform: scale(1.05)
   }
 `;
 
@@ -40,7 +42,6 @@ export const Info = styled.div`
   }
   span {
     font-size: 24px;
-    font-family: ${(props) => props.theme.fonts.regular};
     color: ${(props) => props.theme.colors.text};
   }
 `;

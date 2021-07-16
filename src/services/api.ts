@@ -5,3 +5,5 @@ const api = axios.create({
 });
 
 export default api;
+
+export const imgUrl = 'https://image.tmdb.org/t/p/w185';

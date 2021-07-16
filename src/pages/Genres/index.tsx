@@ -1,14 +1,13 @@
-import { Fragment, useContext } from 'react';
+import { Fragment } from 'react';
 import Carousel from '../../components/Carousel/index';
-import { SearchContext } from '../../context/Search';
 import { Title, Container } from './style';
+
 const FilterSearch = () => {
-  const { list } = useContext(SearchContext);
   return (
     <Fragment>
       <Container>
-        <Title>Resutados</Title>
-        <Carousel favorite={false} list={list} />
+        <Title>Drama</Title>
+        <Carousel favorite={false} list={[]} />
       </Container>
     </Fragment>
   );
