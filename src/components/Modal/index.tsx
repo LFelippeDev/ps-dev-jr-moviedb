@@ -3,7 +3,7 @@ import { Item } from '../../types/types';
 import { Container, InfoModal, InfoMovie, MovieContent } from './styles';
 import { IoCloseSharp } from 'react-icons/io5';
 import { imgUrl } from '../../services/api';
-import teste from '../../assets/teste.jpg';
+import noImage from '../../assets/noImage.jpg';
 
 type ModalProps = {
   item: Item;
@@ -21,7 +21,7 @@ const ModalComponent = (props: ModalProps) => {
         <MovieContent>
           <img
             src={
-              props.item.poster_path ? imgUrl + props.item.poster_path : teste
+              props.item.poster_path ? imgUrl + props.item.poster_path : noImage
             }
             alt={props.item.title}
           />

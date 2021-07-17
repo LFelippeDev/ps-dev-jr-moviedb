@@ -4,9 +4,9 @@ import { ListContextProvider } from './context/List';
 import Navbar from './components/NavBar/index';
 import Home from './pages/Home/index';
 import FilterSearch from './pages/FilterSearch/index';
+import Genres from './pages/Genres/index';
 import Favorites from './pages/Favorites/index';
 import theme from './styles/theme';
-import { Genres } from './components/NavBar/styles';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/search" component={FilterSearch} />
             <Route path="/favoritos" component={Favorites} />
-            <Route path="/genres" component={Genres} />
+            <Route path="/generos" component={Genres} />
             <Route path="*">
               <Link to="/" />
             </Route>

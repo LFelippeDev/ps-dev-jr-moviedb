@@ -9,60 +9,87 @@ height: 100px;
 display: flex;
 align-items: center;
 justify-content: center;
+
+@media(max-width: 1000px){
+  justify-content: space-between;
+  padding: 0 20px;
+}
 `
 export const Nav = styled.div`
 display: flex;
 align-items: baseline;
 justify-content: space-between;
-margin-right:30px;
 `
 export const Image = styled.img`
 height: 60px;
-margin-right: 20px;
 cursor: pointer;
+margin: 0 10px;
+
+@media(max-width: 1000px){
+  height: 35px;
+  margin: 0;
+}
 `
 export const Links= styled(Link)`
-display: inline;
-position: relative;
 font-size: 20px;
-margin-right: 10px;
+margin: 0 10px;
 font-weight: bold;
-color: ${(props) => props.theme.colors.text};
 text-decoration: none;
+color: ${(props) => props.theme.colors.text};
+
 :hover{
   color: ${(props) => props.theme.colors.primary};
+  cursor: pointer;
 }
-:hover ul{
-  display:block;
-  position: absolute;
-}
-cursor: pointer;
-`
-export const Genres = styled.ul`
+
+@media(max-width: 1000px){
 display: none;
-font-size: 20px;
-margin-right: 10px;
-font-weight: bold;
-color: ${(props) => props.theme.colors.text};
-cursor: pointer;
-li{
-  background: black;
-  padding: 10px;
-  :hover{
-    color:${(props) => props.theme.colors.primary};
-  }
 }
 `
 
 export const SearchInput = styled.input`
-background: ${(props) => props.theme.colors.gray};
 border: none;
 border-radius: 10px;
-padding-left: 20px;
+padding: 0 10px;
 height: 60px;
 width: 500px;
-outline: none;
 font-size: 20px;
 font-weight: bold;
+outline: none;
+background: ${(props) => props.theme.colors.gray};
 color: ${(props) => props.theme.colors.text};
+
+@media(max-width: 1000px){
+width: 40vw;
+}
+`
+export const ResponsiveMenu = styled.button`
+display: none;
+background: transparent;
+border: none;
+font-size: 25px;
+color: #fff;
+
+@media(max-width:1000px){
+  display: block;
+}
+
+:active {
+  ul{
+    display: block;
+  }
+}
+`
+
+export const MenuOptions = styled.ul`
+display: none;
+position: relative;
+margin-top: 50px;
+li{
+  padding: 10px;
+  background: black;
+}
+:hover{
+display: block;
+}
 `

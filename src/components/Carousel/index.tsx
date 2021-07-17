@@ -6,7 +6,7 @@ import { FavoritesList, Item } from '../../types/types';
 import { Fragment, useEffect, useState } from 'react';
 import ModalComponent from '../Modal';
 import { render } from '@testing-library/react';
-import teste from '../../assets/teste.jpg';
+import noImage from '../../assets/noImage.jpg';
 
 type CarouselProps = {
   favorite: boolean;
@@ -26,9 +26,7 @@ const Carousel = (props: CarouselProps) => {
   const settings = {
     arrows: false,
     infinite: false,
-    autoplay: false,
-    speed: 300,
-    slidesToShow: 5,
+    slidesToShow: 1,
     slidesToScroll: 5,
     variableWidth: true,
   };
@@ -64,6 +62,7 @@ const Carousel = (props: CarouselProps) => {
   function openModal(item: Item) {
     render(<ModalComponent item={item} openModal={true} />);
   }
+
   return (
     <Fragment>
       <Container>
@@ -71,7 +70,7 @@ const Carousel = (props: CarouselProps) => {
           {list.map((item) => (
             <Card key={item.id}>
               <ImageCard
-                src={item.poster_path ? imgUrl + item.poster_path : teste}
+                src={item.poster_path ? imgUrl + item.poster_path : noImage}
                 alt={item.title ? item.title : item.name}
               />
               <Info>

@@ -12,7 +12,7 @@ justify-content: center;
 
 `
 export const InfoModal = styled.div`
-height: 405px;
+height: 420px;
 width: 500px;
 padding: 20px;
 border-radius: 10px;
@@ -21,6 +21,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-end;
 background: #fff;
+
 button {
   border: none;
   background: transparent;
@@ -31,18 +32,25 @@ button {
   color: red;
 }
 }
+
+@media(max-width: 500px){
+  height: 72vw;
+  width: 80vw;
+}
 ` 
 export const MovieContent = styled.div`
 display: flex;
 justify-content: space-between;
 width: 100%;
+
 img{
-  width: 240px;
+  width: 48%;
   border-radius: 20px;
 }
+
 ` 
 export const InfoMovie = styled.div`
-width: 240px;
+width:48%;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -54,5 +62,15 @@ h2{
 span{
   font-weight: bold;
   font-size: 24px;
+}
+
+@media(max-width: 500px){
+h2{
+font-size: 1.25rem;
+}
+
+span{
+  font-size: 1rem;
+}
 }
 `
