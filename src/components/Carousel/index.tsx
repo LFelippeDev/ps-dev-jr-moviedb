@@ -1,5 +1,5 @@
 import Slider from 'react-slick';
-import { imgUrl } from '../../services/api';
+import api, { imgUrl } from '../../services/api';
 import { Container, Card, ImageCard, Info } from './styles';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { FavoritesList, Item } from '../../types/types';
@@ -59,8 +59,22 @@ const Carousel = (props: CarouselProps) => {
     }
   }
 
-  function openModal(item: Item) {
-    render(<ModalComponent item={item} openModal={true} />);
+  async function openModal(item: Item) {
+    const response = await api.get(
+      'movie/' +
+        item.id +
+        '/reviews?api_key=' +
+        process.env.REACT_APP_API_KEY +
+        '&language=pt-Br'
+    );
+
+    render(
+      <ModalComponent
+        item={item}
+        openModal={true}
+        review={response.data.results[0]}
+      />
+    );
   }
 
   return (

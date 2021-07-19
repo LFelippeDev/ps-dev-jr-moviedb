@@ -51,6 +51,7 @@ img{
 ` 
 export const InfoMovie = styled.div`
 width:48%;
+max-height: 380px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -64,7 +65,12 @@ span{
   font-size: 24px;
 }
 
+p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @media(max-width: 500px){
+  max-height: 60vw;
 h2{
 font-size: 1.25rem;
 }

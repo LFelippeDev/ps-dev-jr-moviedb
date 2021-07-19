@@ -27,7 +27,6 @@ const Genres = () => {
     }
     setGenreList();
   }, []);
-  console.log(list);
   return (
     <Fragment>
       <Container>

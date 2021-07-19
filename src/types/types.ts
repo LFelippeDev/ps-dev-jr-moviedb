@@ -6,6 +6,12 @@ export type Item = {
   vote_average: number
 };
 
+export type Review = {
+    author:string
+    content:string
+};
+
 export type FavoritesList = {
   item: Item[];
 };
+
